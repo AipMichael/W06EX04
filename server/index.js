@@ -3,6 +3,7 @@ const debug = require("debug")("pets:server");
 const express = require("express");
 const morgan = require("morgan");
 const add = require("./routes/add");
+const substract = require("./routes/substract");
 
 const app = express();
 
@@ -20,8 +21,8 @@ const initializeServer = (port) => {
 
 app.use(morgan("dev"));
 app.use("/add", add);
-/* app.use("/substract", YYYY);
-app.use("/multiply", ZZZZ);
-app.use("/division", WWWW); */
+app.use("/substract", substract);
+/* app.use("/multiply", ZZZZ);
+app.use("/division", WWWW);  */
 
 module.exports = initializeServer;
