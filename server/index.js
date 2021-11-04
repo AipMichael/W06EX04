@@ -2,6 +2,7 @@ const chalk = require("chalk");
 const debug = require("debug")("pets:server");
 const express = require("express");
 const morgan = require("morgan");
+const add = require("./routes/add");
 
 const app = express();
 
@@ -18,9 +19,9 @@ const initializeServer = (port) => {
 };
 
 app.use(morgan("dev"));
-app.use("/add", XXXX);
-app.use("/substract", YYYY);
+app.use("/add", add);
+/* app.use("/substract", YYYY);
 app.use("/multiply", ZZZZ);
-app.use("/division", WWWW);
+app.use("/division", WWWW); */
 
 module.exports = initializeServer;
