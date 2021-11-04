@@ -1,5 +1,12 @@
 require("dotenv").config();
-const http = require("http");
+
+const initializeServer = require("./server/index");
+
+const port = process.env.SERVER_PORT || 5000;
+
+initializeServer(port);
+
+/*
 
 const { program } = require("commander");
 
@@ -104,4 +111,4 @@ server.on("request", (request, response) => {
     response.write(errorHtml());
   }
   response.end();
-});
+}); */
