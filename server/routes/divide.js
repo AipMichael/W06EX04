@@ -2,7 +2,7 @@ const express = require("express");
 
 const router = express.Router();
 
-const { addition } = require("../../calculator");
+const { division } = require("../../calculator");
 
 const myHtml = (number1, number2) =>
   `<!DOCTYPE html>
@@ -16,7 +16,7 @@ const myHtml = (number1, number2) =>
   <body>
     <h1>The calculator has calculated these values for you</h1>
     <p>Results: </p>
-    <li>${number1} + ${number2} = ${addition(number1, number2)}</li>
+    <li>${number1} / ${number2} = ${division(number1, number2)}</li>
 
     <p>Bye</p>
   </body>
@@ -33,12 +33,6 @@ router.get("/", (req, res) => {
     error.code = 404;
     throw error;
   }
-});
-router.use((req, res) => {
-  res.json({
-    error: true,
-    message: "vaya pete que te lo flipas",
-  });
 });
 
 module.exports = router;
